@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 //Routes Middleware
-// const workoutRoutes = require("./routes/workout");
+const workoutRoutes = require("./routes/workout");
 const userRoutes = require("./routes/user");
 
 // Environment Setup
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 // Use the routes
-// app.use("/workouts", workoutRoutes);
+app.use("/workouts", workoutRoutes);
 app.use("/users", userRoutes);
 
 if(require.main === module){
